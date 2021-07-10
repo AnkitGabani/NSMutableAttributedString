@@ -1,0 +1,38 @@
+*********************************************************************************************************
+let attributedString1 = NSMutableAttributedString(string: "AED \(dicData.bidPrice ?? "")", attributes: [
+          .font: UIFont(name: "Montserrat-Regular", size: 12.0)!,
+            .foregroundColor: UIColor.black,
+          .kern: -0.29
+        ])
+attributedString1.addAttributes([
+          .font: UIFont(name: "Montserrat-Regular", size: 10.0)!,
+          .kern: -0.24
+        ], range: NSRange(location: "AED \(dicData.bidPrice ?? "")".count - 2, length: 2))
+        
+let attributedString2 = NSMutableAttributedString(string: "  |  \(dicData.totalBids ?? 0) Bids", attributes: [
+          .font: UIFont(name: "Montserrat-Regular", size: 10.0)!,
+            .foregroundColor: UIColor.lightGray,
+            .kern: -0.29
+        ])
+        
+let priceNSMutableAttributedString = NSMutableAttributedString()
+priceNSMutableAttributedString.append(attributedString1)
+priceNSMutableAttributedString.append(attributedString2)
+
+cell.lblPrice.attributedText = priceNSMutableAttributedString
+
+************************************************************************************************************************
+
+
+ let attributedStringbidPrice = NSMutableAttributedString(string: "AED \(dicData.currentPrice ?? "")", attributes: [
+          .font: UIFont(name: "Montserrat-Regular", size: 18.0)!,
+            .foregroundColor: UIColor.black,
+          .kern: -0.29
+        ])
+attributedStringbidPrice.addAttributes([
+          .font: UIFont(name: "Montserrat-Regular", size: 14.0)!,
+          .kern: -0.24
+        ], range: NSRange(location: "AED \(dicData.currentPrice ?? "")".count - 2, length: 2))
+        
+cell.lblCurrentbidPrice.attributedText = attributedStringbidPrice
+        
